@@ -1,0 +1,13 @@
+[include]
+  path = ~/.gitconfig.personal
+
+# when working on work projects
+[includeIf "gitdir:**/posao/**/.git"]
+  path = ~/.gitconfig.work
+
+#[gpg]
+#    program = gpg
+#[commit]
+#    gpgSign = true
+[init]
+	defaultBranch = master
