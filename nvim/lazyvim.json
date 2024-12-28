@@ -1,0 +1,11 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.lang.omnisharp",
+    "lazyvim.plugins.extras.lang.python"
+  ],
+  "news": {
+    "NEWS.md": "10960",
+    "doc/news.txt": "24450"
+  },
+  "version": 7
+}

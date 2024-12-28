@@ -11,3 +11,6 @@ ln -s ~/dotfiles/neofetch.conf ~/.config/neofetch/config.conf
 
 mv ~/.config/ghostty/config ~/.config/ghostty/ghostty.old
 ln -s ~/dotfiles/ghostty.conf ~/.config/ghostty/config
+
+mv ~/.config/nvim ~/.config/nvim.old
+ln -s ~/dotfiles/nvim ~/.config/nvim
