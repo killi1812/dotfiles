@@ -1,39 +1,36 @@
-# exports 
-export PATH=/home/fran/go/bin/:$PATH
-export ZSH="/usr/share/oh-my-zsh/"
-export SSH_ENV="$HOME/.ssh/ssh-agent-environment"
+#            _              
+#    _______| |__  _ __ ___ 
+#   |_  / __| '_ \| '__/ __|
+#  _ / /\__ \ | | | | | (__ 
+# (_)___|___/_| |_|_|  \___|
+#                           
+# -----------------------------------------------------
+# ML4W zshrc loader
+# -----------------------------------------------------
 
-#functions
-start_ssh_agent() {
-  #  TODO add later
-#  eval "$(ssh-agent -s)" > "$SSH_ENV"
-}
+# DON'T CHANGE THIS FILE
 
-ZSH_THEME="refined"
-source $ZSH/oh-my-zsh.sh
-USE_POWERLINE="true"
-HAS_WIDECHARS="false"
+# You can define your custom configuration by adding
+# files in ~/.config/zshrc 
+# or by creating a folder ~/.config/zshrc/custom
+# with copies of files from ~/.config/zshrc 
+# -----------------------------------------------------
 
-#evals
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(atuin init zsh)"
+# -----------------------------------------------------
+# Load modular configarion
+# -----------------------------------------------------
 
-#if [ -f "$SSH_ENV" ]; then
-#  . "$SSH_ENV" > /dev/null
-#  if ! kill -0 "$SSH_AGENT_PID" 2>/dev/null; then
-#    start_ssh_agent
-#  fi
-#else
-#  start_ssh_agent
-#fi
-
-# alias
-alias git-push='
-function _git_push_check() {
-    if ! ssh-add -l | grep -q "Your SSH key comment or filename"; then
-        ssh-add ~/.ssh/github_ed25519 
+for f in ~/.config/zshrc/*; do 
+    if [ ! -d $f ] ;then
+        c=`echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="`
+        [[ -f $c ]] && source $c || source $f
     fi
+done
 
-    git push
-}; _git_push_check'
+# -----------------------------------------------------
+# Load single customization file (if exists)
+# -----------------------------------------------------
 
+if [ -f ~/.zshrc_custom ] ;then
+    source ~/.zshrc_custom
+fi
