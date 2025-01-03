@@ -2,7 +2,7 @@
 
 dotfiles='dotfiles.personal'
 
-ln -sf ~/$dotfiles/.zshrc ~/.zshrc
+ln -sf ~/$dotfiles/.zshrc ~/.config/zshrc/01-evals
 
 ln -sf ~/$dotfiles/.gitconfig* ~/
 

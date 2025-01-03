@@ -3,7 +3,7 @@
 dotfiles='dotfiles.personal'
 
 mv ~/.zshrc ~/.zshrc.old
-ln -s ~/$dotfiles/.zshrc ~/.zshrc
+ln -s ~/$dotfiles/.zshrc ~/.config/zshrc/01-evals
 
 mv ~/.gitconfig* ~/.gitconfig*.old
 ln -s ~/$dotfiles/.gitconfig* ~/
