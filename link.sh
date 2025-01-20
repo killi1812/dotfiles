@@ -17,8 +17,8 @@ ln -s ~/$dotfiles/ghostty.conf ~/.config/ghostty/config
 mv ~/.config/nvim ~/.config/nvim.old
 ln -s ~/$dotfiles/nvim ~/.config/nvim
 
-mv ~/.config/hypr/conf/keybindings/default.conf
+mv ~/.config/hypr/conf/keybindings/default.conf ~/.config/hypr/conf/keybindings/default.conf.old
 ln -s ~/$dotfiles/keyboard/default.conf ~/.config/hypr/conf/keybindings/default.conf
 
-mv ~/.config/hypr/conf/keyboard.conf
+mv ~/.config/hypr/conf/keyboard.conf ~/.config/hypr/conf/keyboard.conf.old
 ln -s ~/$dotfiles/keyboard/keyboard.conf ~/.config/hypr/conf/keyboard.conf

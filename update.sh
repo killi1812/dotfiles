@@ -10,6 +10,7 @@ ln -sf ~/$dotfiles/neofetch.conf ~/.config/neofetch/config.conf
 
 ln -sf ~/$dotfiles/ghostty.conf ~/.config/ghostty/config
 
+#TODO: this create a recursve nvim link
 ln -sf ~/$dotfiles/nvim ~/.config/nvim
 
 ln -sf ~/$dotfiles/keyboard/default.conf ~/.config/hypr/conf/keybindings/default.conf
