@@ -17,4 +17,4 @@ ln -sf ~/$dotfiles/keyboard/default.conf ~/.config/hypr/conf/keybindings/default
 
 ln -sf ~/$dotfiles/keyboard/keyboard.conf ~/.config/hypr/conf/keyboard.conf
 
-ls -sf ~/$dotfiles/waybar ~/.config/waybar
+ln -sf ~/$dotfiles/waybar ~/.config/waybar
