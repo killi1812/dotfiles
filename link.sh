@@ -22,3 +22,6 @@ ln -s ~/$dotfiles/keyboard/default.conf ~/.config/hypr/conf/keybindings/default.
 
 mv ~/.config/hypr/conf/keyboard.conf ~/.config/hypr/conf/keyboard.conf.old
 ln -s ~/$dotfiles/keyboard/keyboard.conf ~/.config/hypr/conf/keyboard.conf
+
+mv ~/dotfiles/waybar ~/$dotfiles/waybar
+ls -s ~/$dotfiles/waybar ~/.config/waybar

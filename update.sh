@@ -16,3 +16,5 @@ ln -sf ~/$dotfiles/nvim ~/.config/nvim
 ln -sf ~/$dotfiles/keyboard/default.conf ~/.config/hypr/conf/keybindings/default.conf
 
 ln -sf ~/$dotfiles/keyboard/keyboard.conf ~/.config/hypr/conf/keyboard.conf
+
+ls -sf ~/$dotfiles/waybar ~/.config/waybar
