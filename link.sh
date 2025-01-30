@@ -25,3 +25,8 @@ ln -s ~/$dotfiles/keyboard/keyboard.conf ~/.config/hypr/conf/keyboard.conf
 
 mv ~/dotfiles/waybar ~/$dotfiles/waybar
 ls -s ~/$dotfiles/waybar ~/.config/waybar
+
+ln -s ~/$dotfiles/finder.sh ~/.config/rofi/finder.sh
+
+mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.old
+ln -s ~/$dotfiles/config.rasi ~/.config/rofi/config.rasi
