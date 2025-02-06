@@ -9,10 +9,11 @@ return {
 				"luacheck",
 				"shellcheck",
 				"shfmt",
-				--"tailwindcss-language-server",
 				"typescript-language-server",
 				"css-lsp",
-				--"gopls",
+				"gopls",
+				"volar",
+				"prettier",
 			})
 		end,
 	},
@@ -37,6 +38,35 @@ return {
 			---@type lspconfig.options
 			servers = {
 				cssls = {},
+
+				eslint = {
+					filetypes = { "javascript", "typescript" },
+					settings = {
+						format = false, -- Disable ESLint formatting
+					},
+					on_attach = function(client, _)
+						client.server_capabilities.documentFormattingProvider = false
+					end,
+				},
+
+				volar = {
+					filetypes = { "vue", "typescript", "javascript" },
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern(".git")(...)
+					end,
+					settings = {
+						vue = {
+							telemetry = { enabled = false },
+							format = {
+								enabled = true,
+								options = {
+									tabSize = 4,
+									useTabs = false,
+								},
+							},
+						},
+					},
+				},
 				gopls = {
 					analyses = {
 						unusedparams = true,
@@ -44,12 +74,8 @@ return {
 					staticcheck = true,
 					gofumpt = true,
 				},
-				tailwindcss = {
-					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
-					end,
-				},
 				tsserver = {
+					filetypes = { "typescript", "javascript" },
 					root_dir = function(...)
 						return require("lspconfig.util").root_pattern(".git")(...)
 					end,
@@ -78,6 +104,12 @@ return {
 							},
 						},
 					},
+					on_attach = function(client, bufnr)
+						local bufname = vim.api.nvim_buf_get_name(bufnr)
+						if bufname:match("%.vue$") then
+							client.stop() -- Disable tsserver in Vue files
+						end
+					end,
 				},
 				html = {},
 				yamlls = {
@@ -153,7 +185,6 @@ return {
 					},
 				},
 			},
-			setup = {},
 		},
 	},
 }
