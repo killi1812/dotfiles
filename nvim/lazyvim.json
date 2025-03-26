@@ -4,9 +4,10 @@
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lang.zig"
   ],
+  "install_version": 7,
   "news": {
     "NEWS.md": "10960",
     "doc/news.txt": "24450"
   },
-  "version": 7
+  "version": 8
 }

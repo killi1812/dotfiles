@@ -13,7 +13,6 @@ return {
 				"css-lsp",
 				"gopls",
 				"volar",
-				"prettier",
 			})
 		end,
 	},
