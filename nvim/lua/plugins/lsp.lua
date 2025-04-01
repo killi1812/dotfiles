@@ -34,12 +34,11 @@ return {
 		end,
 		opts = {
 			inlay_hints = { enabled = true },
-			---@type lspconfig.options
 			servers = {
 				cssls = {},
 
 				eslint = {
-					filetypes = { "javascript", "typescript" },
+					filetypes = { "javascript", "typescript", "vue" },
 					settings = {
 						format = false, -- Disable ESLint formatting
 					},
