@@ -12,7 +12,6 @@ return {
 				"typescript-language-server",
 				"css-lsp",
 				"gopls",
-				"volar",
 			})
 		end,
 	},
@@ -36,7 +35,6 @@ return {
 			inlay_hints = { enabled = true },
 			servers = {
 				cssls = {},
-
 				eslint = {
 					filetypes = { "javascript", "typescript", "vue" },
 					settings = {
@@ -175,8 +173,8 @@ return {
 								enable = false,
 								defaultConfig = {
 									indent_style = "space",
-									indent_size = "2",
-									continuation_indent_size = "2",
+									indent_size = "4",
+									continuation_indent_size = "4",
 								},
 							},
 						},
