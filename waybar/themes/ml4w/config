@@ -34,21 +34,21 @@
 
     // Modules Center
     "modules-center": [
-        "clock"
+      "clock",
+      "custom/notification"
     ],
 
     // Modules Right    
     "modules-right": [
       "custom/cliphist",
       "custom/hypridle",
-      "custom/hyprshade",
-        "pulseaudio",
-        "backlight",
-        "bluetooth",
-        "network",
-        "battery", 
-        "tray",
-        "custom/ml4w-welcome",
-        "custom/exit",
+      "pulseaudio",
+      "backlight",
+      "bluetooth",
+      "network",
+      "battery", 
+      "group/tray",
+      "custom/ml4w-welcome",
+      "custom/exit",
     ]
 }
