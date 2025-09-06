@@ -38,6 +38,11 @@ return {
 					opts = { enter = true, format = "details" },
 					filter = {},
 				},
+				LspInfo = {
+					view = "split",
+					opts = { enter = true, format = "details" },
+					filter = {},
+				},
 			}
 
 			vim.api.nvim_create_autocmd("FileType", {
@@ -137,8 +142,11 @@ return {
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
-		opts = function(_, opts)
-			local logo = [[
+        lazy = false,
+        opts = { 
+            config = {
+                header = function ()
+local logo = [[
         ██████╗ ███████╗██╗   ██╗ █████╗ ███████╗██╗     ██╗███████╗███████╗
         ██╔══██╗██╔════╝██║   ██║██╔══██╗██╔════╝██║     ██║██╔════╝██╔════╝
         ██║  ██║█████╗  ██║   ██║███████║███████╗██║     ██║█████╗  █████╗  
@@ -146,10 +154,10 @@ return {
         ██████╔╝███████╗ ╚████╔╝ ██║  ██║███████║███████╗██║██║     ███████╗
         ╚═════╝ ╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝     ╚══════╝
       ]]
-
 			logo = string.rep("\n", 8) .. logo .. "\n\n"
-			--TODO config je nill
-			--opts.config.header = vim.split(logo, "\n")
-		end,
+                return vim.split(logo, "\n")
+                end
+            },
+        },
 	},
 }

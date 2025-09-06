@@ -14,9 +14,12 @@ return {
 				"gopls",
 			})
 		end,
-		version = "1.11.0",
+		-- version = "1.11.0",
 	},
-	{ "williamboman/mason-lspconfig.nvim", version = "1.32.0" },
+	{
+		"williamboman/mason-lspconfig.nvim",
+		--version = "1.32.0"
+	},
 	-- lsp servers
 	{
 		"neovim/nvim-lspconfig",
@@ -35,8 +38,39 @@ return {
 		opts = {
 			inlay_hints = { enabled = true },
 			servers = {
-				cssls = {},
+				cssls = {
+					-- cmd = { "vscode-css-language-server", "--stdio" },
+					-- filetypes = { "css", "scss", "less" },
+					-- init_options = {
+					-- 	completion = {
+					-- 		triggerPropertyValueCompletion = true,
+					-- 		completePropertyWithSemicolon = true,
+					-- 	},
+					-- 	validation = {
+					-- 		lint = {
+					-- 			compatibleVendorPrefixes = "ignore",
+					-- 			vendorPrefix = "warning",
+					-- 			duplicateProperties = "warning",
+					-- 			emptyRules = "warning",
+					-- 			importStatement = "warning",
+					-- 			boxModel = "warning",
+					-- 			universalSelector = "warning",
+					-- 			zeroUnits = "warning",
+					-- 			fontFaceProperties = "warning",
+					-- 			hexColorLength = "error",
+					-- 			argumentsInColorFunction = "error",
+					-- 			unknownProperties = "warning",
+					-- 			ieHack = "warning",
+					-- 			unknownAtRules = "warning",
+					-- 			propertyIgnoredDueToDisplay = "warning",
+					-- 			badApplyScan = "error",
+					-- 		},
+					-- 	},
+					-- },
+					-- root_dir = [[root_pattern(".git")]],
+				},
 				eslint = {
+					enabled = false,
 					filetypes = { "javascript", "typescript", "vue" },
 					settings = {
 						format = false, -- Disable ESLint formatting
@@ -44,69 +78,85 @@ return {
 					on_attach = function(client, _)
 						client.server_capabilities.documentFormattingProvider = false
 					end,
+					-- cmd = { "vscode-eslint-language-server", "--stdio" },
+					-- filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+					-- settings = {
+					-- 	codeAction = {
+					-- 		disableRuleComment = {
+					-- 			enable = true,
+					-- 			location = "separateLine",
+					-- 		},
+					-- 		showDocumentation = {
+					-- 			enable = true,
+					-- 		},
+					-- 	},
+					-- 	codeActionOnSave = {
+					-- 		enable = false,
+					-- 		mode = "all",
+					-- 	},
+					-- 	format = true,
+					-- 	nodePath = nil,
+					-- 	onIgnoredFiles = "off",
+					-- 	packageManager = "npm",
+					-- 	quiet = false,
+					-- 	rulesCustomizations = {},
+					-- 	run = "onType",
+					-- 	useESLintClass = false,
+					-- 	validate = "on",
+					-- 	workingDirectory = {
+					-- 		mode = "location",
+					-- 	},
+					-- },
 				},
 
 				volar = {
+					enabled = true,
 					filetypes = { "vue", "typescript", "javascript" },
-					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
-					end,
-					settings = {
-						vue = {
-							telemetry = { enabled = false },
-							format = {
-								enabled = true,
-								options = {
-									tabSize = 4,
-									useTabs = false,
-								},
-							},
-						},
-					},
+					root_dir = [[root_pattern(".git")]],
+					-- cmd = { "vue-language-server", "--stdio" },
+					-- filetypes = { "vue", "javascript", "typescript" },
+					-- init_options = {
+					-- 	typescript = {
+					-- 		tsdk = "path/to/node_modules/typescript/lib",
+					-- 	},
+					-- },
+					-- root_dir = [[root_pattern("package.json")]],
 				},
-				gopls = {
-					analyses = {
-						unusedparams = true,
-					},
-					staticcheck = true,
-					gofumpt = true,
+				vtsls = {
+					enabled = true,
+					filetypes = { "typescript", "javascript", "vue" },
+					root_dir = [[root_pattern(".git")]],
+					-- cmd = { "vtsls", "--stdio" },
+					-- filetypes = { "typescript", "javascript", "vue" },
+					-- root_dir = [[root_pattern("package.json")]],
 				},
 				tsserver = {
-					filetypes = { "typescript", "javascript" },
-					root_dir = function(...)
-						return require("lspconfig.util").root_pattern(".git")(...)
-					end,
-					single_file_support = false,
+					enabled = false,
+					root_dir = [[root_pattern(".git")]],
+					-- cmd = { "typescript-language-server", "--stdio" },
+					-- filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
+					-- root_dir = [[root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")]],
+				},
+
+				gopls = {
+					root_dir = [[root_pattern("go.work", "go.mod", ".git")]],
+					filetypes = { "go", "gomod", "gowork", "gotmpl" },
 					settings = {
-						typescript = {
-							inlayHints = {
-								includeInlayParameterNameHints = "literal",
-								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-								includeInlayFunctionParameterTypeHints = true,
-								includeInlayVariableTypeHints = false,
-								includeInlayPropertyDeclarationTypeHints = true,
-								includeInlayFunctionLikeReturnTypeHints = true,
-								includeInlayEnumMemberValueHints = true,
+						gopls = {
+							analyses = {
+								unusedparams = true,
+								ST1003 = false,
 							},
-						},
-						javascript = {
-							inlayHints = {
-								includeInlayParameterNameHints = "all",
-								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-								includeInlayFunctionParameterTypeHints = true,
-								includeInlayVariableTypeHints = true,
-								includeInlayPropertyDeclarationTypeHints = true,
-								includeInlayFunctionLikeReturnTypeHints = true,
-								includeInlayEnumMemberValueHints = true,
+							staticcheck = true,
+							gofumpt = false,
+							hints = {
+								parameterNames = false,
+								rangeVariableTypes = false,
+								assignVariableTypes = false,
+								compositeLiteralTypes = false,
 							},
 						},
 					},
-					on_attach = function(client, bufnr)
-						local bufname = vim.api.nvim_buf_get_name(bufnr)
-						if bufname:match("%.vue$") then
-							client.stop() -- Disable tsserver in Vue files
-						end
-					end,
 				},
 				html = {},
 				yamlls = {

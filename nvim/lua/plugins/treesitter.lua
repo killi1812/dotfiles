@@ -12,14 +12,10 @@ return {
 				"fish",
 				"gitignore",
 				"go",
-				--"graphql",
 				"http",
 				"java",
-				--"php",
-				--"rust",
 				"scss",
 				"sql",
-				--"svelte",
 				--"csharp",
 			},
 
@@ -56,7 +52,7 @@ return {
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
 
-			-- MDX
+            -- MDX
 			vim.filetype.add({
 				extension = {
 					mdx = "mdx",
