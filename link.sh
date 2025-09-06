@@ -30,3 +30,6 @@ ln -s ~/$dotfiles/finder.sh ~/.config/rofi/finder.sh
 
 mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.old
 ln -s ~/$dotfiles/config.rasi ~/.config/rofi/config.rasi
+
+mv ~/.config/swaync ~/$dotfiles/swaync
+ln -s ~/$dotfiles/swaync ~/.config/swaync 

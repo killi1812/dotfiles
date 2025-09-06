@@ -22,3 +22,5 @@ ln -sf ~/$dotfiles/waybar ~/.config/waybar
 ln -sf ~/$dotfiles/finder.sh ~/.config/rofi/finder.sh
 
 ln -sf ~/$dotfiles/config.rasi ~/.config/rofi/config.rasi
+
+ln -sf ~/$dotfiles/swaync ~/.config/swaync 
