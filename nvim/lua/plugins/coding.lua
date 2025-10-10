@@ -52,7 +52,7 @@ return {
 
 	-- Go forward/backward with square brackets
 	{
-		"echasnovski/mini.bracketed",
+		"nvim-mini/mini.bracketed",
 		event = "BufReadPost",
 		config = function()
 			local bracketed = require("mini.bracketed")
@@ -96,13 +96,5 @@ return {
 		opts = {
 			position = "right",
 		},
-	},
-
-	{
-		"nvim-cmp",
-		dependencies = { "hrsh7th/cmp-emoji" },
-		opts = function(_, opts)
-			table.insert(opts.sources, { name = "emoji" })
-		end,
 	},
 }

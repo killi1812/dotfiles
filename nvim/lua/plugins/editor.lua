@@ -16,7 +16,7 @@ return {
 		"rest-nvim/rest.nvim",
 	},
 	{
-		"echasnovski/mini.hipatterns",
+		"nvim-mini/mini.hipatterns",
 		event = "BufReadPre",
 		opts = {
 			highlighters = {
@@ -36,6 +36,21 @@ return {
 			},
 		},
 	},
+{
+		"brenoprata10/nvim-highlight-colors",
+		event = "BufReadPre",
+		opts = {
+			render = "background",
+			enable_hex = true,
+			enable_short_hex = true,
+			enable_rgb = true,
+			enable_hsl = true,
+			enable_hsl_without_function = true,
+			enable_ansi = true,
+			enable_var_usage = true,
+			enable_tailwind = true,
+		},
+	},
 
 	{
 		"dinhhuy258/git.nvim",
@@ -50,8 +65,8 @@ return {
 		},
 	},
 
-	{
-		"telescope.nvim",
+		{
+		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
@@ -129,6 +144,14 @@ return {
 					builtin.treesitter()
 				end,
 				desc = "Lists Function names, variables, from Treesitter",
+			},
+			{
+				";c",
+				function()
+					local builtin = require("telescope.builtin")
+					builtin.lsp_incoming_calls()
+				end,
+				desc = "Lists LSP incoming calls for word under the cursor",
 			},
 			{
 				"sf",
@@ -211,5 +234,41 @@ return {
 			require("telescope").load_extension("fzf")
 			require("telescope").load_extension("file_browser")
 		end,
+	},
+{
+		"kazhala/close-buffers.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>th",
+				function()
+					require("close_buffers").delete({ type = "hidden" })
+				end,
+				"Close Hidden Buffers",
+			},
+			{
+				"<leader>tu",
+				function()
+					require("close_buffers").delete({ type = "nameless" })
+				end,
+				"Close Nameless Buffers",
+			},
+		},
+	},
+
+	{
+		"saghen/blink.cmp",
+		opts = {
+			completion = {
+				menu = {
+					winblend = vim.o.pumblend,
+				},
+			},
+			signature = {
+				window = {
+					winblend = vim.o.pumblend,
+				},
+			},
+		},
 	},
 }

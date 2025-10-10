@@ -18,7 +18,8 @@ return {
 			})
 			vim.api.nvim_create_autocmd("FocusLost", {
 				callback = function()
-					focused = false
+                    -- TODO: this should be false but becouse of api of nvim 0.10 notifications are multicast
+					focused = true
 				end,
 			})
 			table.insert(opts.routes, 1, {
@@ -64,18 +65,25 @@ return {
 			timeout = 5000,
 		},
 	},
-
-	-- animations
-	{
-		"echasnovski/mini.animate",
-		event = "VeryLazy",
-		opts = function(_, opts)
-			opts.scroll = {
-				enable = false,
-			}
-		end,
+{
+		"snacks.nvim",
+		opts = {
+			scroll = { enabled = false },
+		},
+		keys = {},
 	},
 
+	-- -- animations
+	-- {
+	-- 	"echasnovski/mini.animate",
+	-- 	event = "VeryLazy",
+	-- 	opts = function(_, opts)
+	-- 		opts.scroll = {
+	-- 			enable = false,
+	-- 		}
+	-- 	end,
+	-- },
+	
 	-- buffer line
 	{
 		"akinsho/bufferline.nvim",
@@ -138,26 +146,30 @@ return {
 		},
 		keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
 	},
+    
 
-	{
-		"nvimdev/dashboard-nvim",
-		event = "VimEnter",
-        lazy = false,
-        opts = { 
-            config = {
-                header = function ()
-local logo = [[
-        ██████╗ ███████╗██╗   ██╗ █████╗ ███████╗██╗     ██╗███████╗███████╗
-        ██╔══██╗██╔════╝██║   ██║██╔══██╗██╔════╝██║     ██║██╔════╝██╔════╝
-        ██║  ██║█████╗  ██║   ██║███████║███████╗██║     ██║█████╗  █████╗  
-        ██║  ██║██╔══╝  ╚██╗ ██╔╝██╔══██║╚════██║██║     ██║██╔══╝  ██╔══╝  
-        ██████╔╝███████╗ ╚████╔╝ ██║  ██║███████║███████╗██║██║     ███████╗
-        ╚═════╝ ╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝     ╚══════╝
-      ]]
-			logo = string.rep("\n", 8) .. logo .. "\n\n"
-                return vim.split(logo, "\n")
-                end
-            },
-        },
+{
+		"MeanderingProgrammer/render-markdown.nvim",
+		enabled = false,
 	},
+
+	
+{
+		"folke/snacks.nvim",
+		opts = {
+			dashboard = {
+				preset = {
+					header = [[
+	        ██████╗ ███████╗██╗   ██╗ █████╗ ███████╗██╗     ██╗███████╗███████╗
+	        ██╔══██╗██╔════╝██║   ██║██╔══██╗██╔════╝██║     ██║██╔════╝██╔════╝
+	        ██║  ██║█████╗  ██║   ██║███████║███████╗██║     ██║█████╗  █████╗
+	        ██║  ██║██╔══╝  ╚██╗ ██╔╝██╔══██║╚════██║██║     ██║██╔══╝  ██╔══╝
+	        ██████╔╝███████╗ ╚████╔╝ ██║  ██║███████║███████╗██║██║     ███████╗
+	        ╚═════╝ ╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝     ╚══════╝
+   ]],
+				},
+			},
+		},
+	},
+
 }
