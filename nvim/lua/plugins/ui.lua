@@ -74,15 +74,15 @@ return {
 	},
 
 	-- -- animations
-	-- {
-	-- 	"echasnovski/mini.animate",
-	-- 	event = "VeryLazy",
-	-- 	opts = function(_, opts)
-	-- 		opts.scroll = {
-	-- 			enable = false,
-	-- 		}
-	-- 	end,
-	-- },
+	{
+		"nvim-mini/mini.animate",
+		event = "VeryLazy",
+		opts = function(_, opts)
+			opts.scroll = {
+				enable = false,
+			}
+		end,
+	},
 	
 	-- buffer line
 	{
@@ -131,6 +131,25 @@ return {
 					return { { icon, guifg = color }, { " " }, { filename } }
 				end,
 			})
+		end,
+	},
+
+-- statusline
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = function(_, opts)
+			local LazyVim = require("lazyvim.util")
+			opts.sections.lualine_c[4] = {
+				LazyVim.lualine.pretty_path({
+					length = 0,
+					relative = "cwd",
+					modified_hl = "MatchParen",
+					directory_hl = "",
+					filename_hl = "Bold",
+					modified_sign = "",
+					readonly_icon = " 󰌾 ",
+				}),
+			}
 		end,
 	},
 
