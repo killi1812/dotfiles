@@ -97,4 +97,27 @@ return {
 			position = "right",
 		},
 	},
+{
+  'rest-nvim/rest.nvim',
+  ft = 'http', -- Lazy-load for .http files
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  -- init = function()
+  --   vim.g.rest_nvim = {}
+  -- end,
+  config = function()
+    -- This autocmd creates the keymap only for .http files
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'http',
+      callback = function()
+        -- You can keep your custom keymap or use the default <localleader>r
+        vim.keymap.set('n', '<leader>rr', '<cmd>Rest run<CR>', {
+          buffer = true,
+          noremap = true,
+          silent = true,
+          desc = 'Run rest.nvim request',
+        })
+      end,
+    })
+  end,
+},
 }
