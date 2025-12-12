@@ -14,11 +14,9 @@ return {
 				"gopls",
 			})
 		end,
-		-- version = "1.11.0",
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
-		--version = "1.32.0"
 	},
 	-- lsp servers
 	{
@@ -136,7 +134,7 @@ return {
 								ST1003 = false,
 							},
 							staticcheck = true,
-							gofumpt = false,
+							gofumpt = true,
 							hints = {
 								parameterNames = false,
 								rangeVariableTypes = false,
@@ -220,23 +218,17 @@ return {
 					},
 				},
 			},
+        ["*"] = {
+					keys = {
+						{
+							"gd",
+							function()
+								require("telescope.builtin").lsp_definitions({ reuse_win = false })
+							end,
+							desc = "Goto Definition (Telescope)",
+						},
+					},
+				},
 		},
 	},
-    {
-"neovim/nvim-lspconfig",
-		opts = function()
-			local keys = require("lazyvim.plugins.lsp.keymaps").get()
-			vim.list_extend(keys, {
-				{
-					"gd",
-					function()
-						-- DO NOT RESUSE WINDOW
-						require("telescope.builtin").lsp_definitions({ reuse_win = false })
-					end,
-					desc = "Goto Definition",
-					has = "definition",
-				},
-			})
-		end,
-    },
 }
