@@ -408,11 +408,10 @@
     "escape": true
   },
   // ps5 controller battery
-  "custom/ctrllbat": {
+  "custom/ps5battery": {
     "format": "{}",
     "rotate": 0,
     "return-type": "json",
-    //"exec-if": "which swaync-client",
     "exec": "~/Documents/Projects/ps5battery/controller_battery.sh",
     "on-click": "pkill -RTMIN+8 waybar", // Sends signal 8 to Waybar
     "signal": 8, // Tells Waybar to refresh this module on signal 8

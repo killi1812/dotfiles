@@ -14,7 +14,7 @@
     "margin-top": 14,
     "margin-bottom": 0,
     "margin-left": 14,
-    "margin-right": 14,    
+    "margin-right": 14,
     "spacing": 0,
 
     // Load Modules
@@ -36,11 +36,11 @@
     "modules-center": [
       "clock",
       "custom/notification",
-      "custom/ctrllbat"
     ],
 
     // Modules Right    
     "modules-right": [
+      "custom/ps5battery",
       "custom/cliphist",
       "custom/hypridle",
       "pulseaudio",
