@@ -1,7 +1,8 @@
 # My dotfiles
 
 - [ ] waybar config
-- [ ] swaync colorscheme
+- [ ] swaync styling
+- [ ] check do not disturb with swaync
 - [ ] atuin sync server self hoste
 - [ ] atuin config
 - [ ] add support for constum configs for device specific settings
