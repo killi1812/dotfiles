@@ -9,9 +9,10 @@ oh-my-zsh
 btop
 mission-center
 neovim
-nvm 
+nvm
 atuin
 zoxide
+wl-clipboar
 
 #hyprland
 hyprland
@@ -27,6 +28,7 @@ hyprutils
 hyprwayland-scanner
 hyprland-guiutils
 aquamarine
+sddm
 
 # wallpaper
 hyprpaper

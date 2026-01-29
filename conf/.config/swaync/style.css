@@ -1,6 +1,6 @@
 /* Colors */
 
-@import 'colors.css';
+@import '../../.cache/wal/waybar_config.css';
 
 * {
   font-family: "Fira Sans Semibold";

@@ -1,9 +1,9 @@
 [include]
-  path = ~/.gitconfig.personal
+  path = ~/.config/git/gitconfig.personal
 
 # when working on work projects
-[includeIf "gitdir:**/posao/**/.git"]
-  path = ~/.gitconfig.work
+[includeIf "gitdir:**/work/**/.git"]
+  path = ~/.config/git/gitconfig.work
 
 #[gpg]
 #    program = gpg
