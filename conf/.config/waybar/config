@@ -10,12 +10,11 @@
 //
 {
     // General Settings
-    "position": "bottom",
-    "margin-top": 0,
-    "margin-bottom": 14,
     "layer": "top",
+    "margin-top": 14,
+    "margin-bottom": 0,
     "margin-left": 14,
-    "margin-right": 14,    
+    "margin-right": 14,
     "spacing": 0,
 
     // Load Modules
@@ -26,32 +25,30 @@
 
     // Modules Left
     "modules-left": [
-"custom/appmenu",
-        "group/links",
-//"wlr/taskbar",
-        "group/quicklinks",
-"hyprland/window",
+        "hyprland/workspaces",
+        "cpu",
+        "memory",
+        "disk",
+        "hyprland/language",
     ],
 
     // Modules Center
     "modules-center": [
-        "hyprland/workspaces",
-        "custom/empty"
+      "clock",
+      "custom/notification",
     ],
 
     // Modules Right    
     "modules-right": [
-        "custom/updates",
-        "pulseaudio",
-//"backlight",
-        "bluetooth",
-        "battery", 
-"network",
-        "group/hardware",
-        "group/tools",
-"tray",
-        "custom/exit",
-        "custom/ml4w-welcome",
-        "clock"
+      "custom/ps5battery",
+      "custom/cliphist",
+      "custom/hypridle",
+      "pulseaudio",
+      "backlight",
+      "bluetooth",
+      "network",
+      "battery", 
+      "group/tray",
+      "custom/exit",
     ]
 }

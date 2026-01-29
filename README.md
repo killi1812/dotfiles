@@ -8,4 +8,6 @@
 - [ ] select device at linking
 - [ ] copy hypr/scripts
 - [ ] copy usefull ml4w/scripts
-- [ ] copy rofi conf
+- [x] copy rofi conf
+- [ ] Write waybar powerprofilectl select
+- [ ] clean waybar folder
