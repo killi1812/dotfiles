@@ -10,3 +10,4 @@ return {
 		end,
 	},
 }
+-- TODO: check to take colorscheme from wal

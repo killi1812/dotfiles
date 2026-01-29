@@ -14,11 +14,6 @@ neovim
 hyprland
 xdg-desktop-portal-hyprland
 
-# walpaper
-hyprpaper
-waypaper-git
-hyprwire
-
 hypridle
 hyprlock
 hyprcursor
@@ -29,6 +24,14 @@ hyprutils
 hyprwayland-scanner
 hyprland-guiutils
 aquamarine
+
+# wallpaper
+hyprpaper
+waypaper-git
+hyprwire
+
+# generate color scheme
+wal
 
 #file manager
 thunar
