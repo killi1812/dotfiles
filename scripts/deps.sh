@@ -13,6 +13,7 @@ nvm
 atuin
 zoxide
 wl-clipboar
+cliphist
 
 #hyprland
 hyprland
