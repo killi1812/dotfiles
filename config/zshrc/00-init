@@ -1,0 +1,18 @@
+# -----------------------------------------------------
+# INIT
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# Exports
+# -----------------------------------------------------
+export EDITOR=nvim
+
+export PATH="/home/fran/go/bin/:$PATH"
+
+# For cross compiling
+export PATH="/usr/lib/ccache/bin/:$PATH"
+
+. /usr/share/nvm/init-nvm.sh
+
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(atuin init zsh)"

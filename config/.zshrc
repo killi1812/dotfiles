@@ -1,6 +1,18 @@
-export PATH=/home/fran/go/bin/:$PATH
+#            _
+#    _______| |__  _ __ ___
+#   |_  / __| '_ \| '__/ __|
+#  _ / /\__ \ | | | | | (__
+# (_)___|___/_| |_|_|  \___|
+#
+# -----------------------------------------------------
 
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(atuin init zsh)"
-. /usr/share/nvm/init-nvm.sh
-# eval "$(task --completion zsh)"
+# -----------------------------------------------------
+# Load modular configarion
+# -----------------------------------------------------
+
+for f in ~/.config/zshrc/*; do
+    if [ ! -d $f ] ;then
+        c=`echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="`
+        [[ -f $c ]] && source $c || source $f
+    fi
+done

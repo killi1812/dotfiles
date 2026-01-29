@@ -9,6 +9,9 @@ oh-my-zsh
 btop
 mission-center
 neovim
+nvm 
+atuin
+zoxide
 
 #hyprland
 hyprland
@@ -39,3 +42,4 @@ thunar
 #app launcher
 albert
 rofi
+
