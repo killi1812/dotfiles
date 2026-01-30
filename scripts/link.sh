@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# TODO:go trugh conf folder and coppy them to 
+# TODO:go through conf folder and copy them to
 
 dotfiles='dotfiles'
 
