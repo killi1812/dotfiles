@@ -418,5 +418,14 @@
     "interval": 30,
     "tooltip": true,
     "escape": true
+  },
+  "custom/uib_vpn": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/uib-vpn.sh status",
+    "interval": 3,
+    "signal": 8,
+    "on-click": "$HOME/.config/waybar/scripts/uib-vpn.sh toggle",
+    "on-click-right": "$HOME/.config/waybar/scripts/uib-vpn.sh disconnect"
   }
 }

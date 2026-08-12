@@ -513,3 +513,26 @@ window#waybar.empty #window {
 #custom-ps5battery.critical {
   color: #f38ba8;
 }
+
+#custom-uib_vpn {
+  padding: 0 10px;
+  margin: 0 4px;
+  font-size: 20px;
+  padding: 2px 10px 0px 10px;
+  margin: 5px 15px 5px 0px;
+}
+
+#custom-uib_vpn.connected {
+  color: #a6e3a1;
+  /* Green */
+}
+
+#custom-uib_vpn.connecting {
+  color: #f9e2af;
+  /* Yellow / Warning */
+}
+
+#custom-uib_vpn.disconnected {
+  color: #6c7086;
+  /* Grayed out / Muted */
+}

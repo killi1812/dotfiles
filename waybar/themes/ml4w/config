@@ -40,6 +40,7 @@
 
     // Modules Right    
     "modules-right": [
+      "custom/uib_vpn",
       "custom/ps5battery",
       "custom/cliphist",
       "custom/hypridle",
