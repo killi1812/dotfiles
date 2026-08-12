@@ -48,6 +48,7 @@
       "backlight",
       "bluetooth",
       "network",
+      "power-profiles-daemon",
       "battery", 
       "group/tray",
       "custom/ml4w-welcome",

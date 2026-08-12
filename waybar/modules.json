@@ -427,5 +427,17 @@
     "signal": 8,
     "on-click": "$HOME/.config/waybar/scripts/uib-vpn.sh toggle",
     "on-click-right": "$HOME/.config/waybar/scripts/uib-vpn.sh disconnect"
+  },
+  // Power Profiles Daemon
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   }
 }
