@@ -428,6 +428,118 @@
     "on-click": "$HOME/.config/waybar/scripts/uib-vpn.sh toggle",
     "on-click-right": "$HOME/.config/waybar/scripts/uib-vpn.sh disconnect"
   },
+  "group/vpn": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "vpn-child",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/vpn_status",
+      "custom/vpn_uib",
+      "custom/vpn_tailscale",
+      "custom/vpn_proton"
+    ]
+  },
+  "custom/vpn_status": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/vpn.sh status_global",
+    "interval": 5,
+    "signal": 8,
+    "on-click-right": "$HOME/.config/waybar/scripts/vpn.sh disconnect"
+  },
+  "custom/vpn_uib": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/vpn.sh status_uib",
+    "interval": 5,
+    "signal": 8,
+    "on-click": "$HOME/.config/waybar/scripts/vpn.sh toggle_uib"
+  },
+  "custom/vpn_tailscale": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/vpn.sh status_ts",
+    "interval": 5,
+    "signal": 8,
+    "on-click": "$HOME/.config/waybar/scripts/vpn.sh toggle_ts"
+  },
+  "custom/vpn_proton": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/vpn.sh status_proton",
+    "interval": 5,
+    "signal": 8,
+    "on-click": "$HOME/.config/waybar/scripts/vpn.sh toggle_proton"
+  },
+  "group/tmux": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "tmux-child",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/tmux_status",
+      "custom/tmux_slot0",
+      "custom/tmux_slot1",
+      "custom/tmux_slot2",
+      "custom/tmux_slot3",
+      "custom/tmux_slot4",
+      "custom/tmux_slot5"
+    ]
+  },
+  "custom/tmux_status": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/tmux.sh count",
+    "interval": 3,
+    "on-click": "$HOME/.config/waybar/scripts/tmux.sh new"
+  },
+  "custom/tmux_slot0": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/tmux.sh session 0",
+    "interval": 3,
+    "on-click": "$HOME/.config/waybar/scripts/tmux.sh attach 0"
+  },
+  "custom/tmux_slot1": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/tmux.sh session 1",
+    "interval": 3,
+    "on-click": "$HOME/.config/waybar/scripts/tmux.sh attach 1"
+  },
+  "custom/tmux_slot2": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/tmux.sh session 2",
+    "interval": 3,
+    "on-click": "$HOME/.config/waybar/scripts/tmux.sh attach 2"
+  },
+  "custom/tmux_slot3": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/tmux.sh session 3",
+    "interval": 3,
+    "on-click": "$HOME/.config/waybar/scripts/tmux.sh attach 3"
+  },
+  "custom/tmux_slot4": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/tmux.sh session 4",
+    "interval": 3,
+    "on-click": "$HOME/.config/waybar/scripts/tmux.sh attach 4"
+  },
+  "custom/tmux_slot5": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/tmux.sh session 5",
+    "interval": 3,
+    "on-click": "$HOME/.config/waybar/scripts/tmux.sh attach 5"
+  },
   // Power Profiles Daemon
   "power-profiles-daemon": {
     "format": "{icon}",

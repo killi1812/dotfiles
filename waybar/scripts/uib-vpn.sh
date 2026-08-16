@@ -11,7 +11,7 @@ is_connected() {
 }
 
 is_connecting() {
-    pgrep -f "vpnui" >/dev/null 2>&1
+    pgrep -x "vpnui" >/dev/null 2>&1
 }
 
 status() {

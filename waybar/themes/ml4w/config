@@ -29,7 +29,9 @@
         "cpu",
         "memory",
         "disk",
-        "hyprland/language",
+        "hyprland/language"
+//        "group/vpn",
+//        "group/tmux"
     ],
 
     // Modules Center
@@ -40,7 +42,6 @@
 
     // Modules Right    
     "modules-right": [
-      "custom/uib_vpn",
       "custom/ps5battery",
       "custom/cliphist",
       "custom/hypridle",

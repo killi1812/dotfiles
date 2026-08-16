@@ -540,25 +540,117 @@ window#waybar.empty #window {
   color: #f38ba8;
 }
 
-#custom-uib_vpn {
-  padding: 0 10px;
-  margin: 0 4px;
-  font-size: 20px;
-  padding: 2px 10px 0px 10px;
-  margin: 5px 15px 5px 0px;
+/* -----------------------------------------------------
+ * VPN Drawer Group
+ * ----------------------------------------------------- */
+
+#custom-vpn_status,
+#custom-vpn_uib,
+#custom-vpn_tailscale,
+#custom-vpn_proton {
+  margin: 0px;
+  padding: 0px 8px;
+  font-size: 16px;
 }
 
-#custom-uib_vpn.connected {
+#custom-vpn_status.connected,
+#custom-vpn_uib.connected,
+#custom-vpn_tailscale.connected,
+#custom-vpn_proton.connected {
   color: #a6e3a1;
   /* Green */
 }
 
-#custom-uib_vpn.connecting {
+#custom-vpn_status.connecting,
+#custom-vpn_uib.connecting,
+#custom-vpn_tailscale.connecting,
+#custom-vpn_proton.connecting {
   color: #f9e2af;
   /* Yellow / Warning */
 }
 
-#custom-uib_vpn.disconnected {
+#custom-vpn_status.disconnected,
+#custom-vpn_uib.disconnected,
+#custom-vpn_tailscale.disconnected,
+#custom-vpn_proton.disconnected {
   color: #6c7086;
   /* Grayed out / Muted */
+}
+
+.vpn-child {
+  opacity: 0.65;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.vpn-child:hover {
+  opacity: 1.0;
+}
+
+/* -----------------------------------------------------
+ * Tmux Drawer Group
+ * ----------------------------------------------------- */
+
+#custom-tmux_status {
+  margin: 0px;
+  padding: 0px 8px;
+  font-size: 16px;
+  color: @iconcolor;
+}
+
+#custom-tmux_status.active {
+  color: #89b4fa; /* Blue when active sessions exist */
+}
+
+#custom-tmux_status.empty {
+  color: #6c7086; /* Grayed out when no sessions exist */
+}
+
+#custom-tmux_slot0,
+#custom-tmux_slot1,
+#custom-tmux_slot2,
+#custom-tmux_slot3,
+#custom-tmux_slot4,
+#custom-tmux_slot5 {
+  margin: 0px;
+  padding: 0px 8px;
+  font-size: 14px;
+}
+
+#custom-tmux_slot0.attached,
+#custom-tmux_slot1.attached,
+#custom-tmux_slot2.attached,
+#custom-tmux_slot3.attached,
+#custom-tmux_slot4.attached,
+#custom-tmux_slot5.attached {
+  color: #a6e3a1; /* Green for attached sessions */
+}
+
+#custom-tmux_slot0.detached,
+#custom-tmux_slot1.detached,
+#custom-tmux_slot2.detached,
+#custom-tmux_slot3.detached,
+#custom-tmux_slot4.detached,
+#custom-tmux_slot5.detached {
+  color: #f9e2af; /* Yellow/Orange for detached sessions */
+}
+
+#custom-tmux_slot0.empty,
+#custom-tmux_slot1.empty,
+#custom-tmux_slot2.empty,
+#custom-tmux_slot3.empty,
+#custom-tmux_slot4.empty,
+#custom-tmux_slot5.empty {
+  padding: 0px;
+  margin: 0px;
+  min-width: 0px;
+  border: none;
+}
+
+.tmux-child {
+  opacity: 0.65;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.tmux-child:hover {
+  opacity: 1.0;
 }
