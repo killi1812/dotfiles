@@ -5,6 +5,10 @@
 [includeIf "gitdir:**/posao/**/.git"]
   path = ~/.gitconfig.work
 
+# when working on work projects
+[includeIf "gitdir:**/uni/**/.git"]
+  path = ~/.gitconfig.uni
+
 #[gpg]
 #    program = gpg
 #[commit]

@@ -22,12 +22,13 @@ is_tailscale_connected() {
 }
 
 is_proton_connected() {
-    "$PROTONVPN_CLI" status 2>&1 | grep -q "Status: Connected"
+    [ -d "/sys/class/net/proton0" ] || nmcli -t -f NAME,STATE connection show --active | grep -q "^ProtonVPN.*:activated"
 }
 
 is_proton_connecting() {
-    "$PROTONVPN_CLI" status 2>&1 | grep -q "Status: Connecting"
+    pgrep -f "[p]rotonvpn.* connect" >/dev/null 2>&1 || nmcli -t -f NAME,STATE connection show --active | grep -E "^(ProtonVPN|pvpn-)" | grep -q ":activating"
 }
+
 
 status_uib() {
     if is_uib_connecting && ! is_uib_connected; then

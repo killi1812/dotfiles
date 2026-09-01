@@ -29,8 +29,8 @@
         "cpu",
         "memory",
         "disk",
-        "hyprland/language"
-//        "group/vpn",
+        "hyprland/language",
+        "group/vpn"
 //        "group/tmux"
     ],
 
